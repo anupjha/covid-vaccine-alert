@@ -7,16 +7,16 @@ const SettingContext = React.createContext()
 
 export default function App() {
   const token = window.localStorage.getItem('covidVaccineAlertSettings')
-  // if (token) return <Redirect to='/get-alert' />
-  const loading = true
+
   return (
     <Router>
       <Route
         exact
         path='/'
-        component={loading ? () => <GetAlert /> : () => <SetAlert />}
+        component={token ? () => <GetAlert /> : () => <SetAlert />}
       />
       <Route path='/set-alert' component={SetAlert} />
+      <Route path='/get-alert' component={GetAlert} />
     </Router>
   )
 }

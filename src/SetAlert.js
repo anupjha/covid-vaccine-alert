@@ -147,7 +147,7 @@ export default function SetAlert(props) {
       'covidVaccineAlertSettings',
       JSON.stringify(localData)
     )
-    history.push('/')
+    history.push('/get-alert')
   }
 
   const handleDistrictChange = (event) => {
